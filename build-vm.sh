@@ -1,7 +1,7 @@
 #!/bin/bash
 
 VMNAME="archiveteam-warrior-2"
-INSTALL_ISO="debian-6.0.5-i386-netinst.iso"
+INSTALL_ISO="debian-6.0.6-i386-netinst.iso"
 
 VBoxManage createvm --name $VMNAME --ostype Debian --register
 VBoxManage modifyvm $VMNAME \
