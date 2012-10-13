@@ -1,7 +1,7 @@
 #!/bin/bash
 
 VMNAME="archiveteam-warrior-2"
-OVA_OUT="archiveteam-warrior-v2.ova"
+OVA_OUT="archiveteam-warrior-v2-$( date +%Y%m%d ).ova"
 
 VBoxManage modifyhd --compact os.vdi
 VBoxManage modifyhd --compact data.vdi
