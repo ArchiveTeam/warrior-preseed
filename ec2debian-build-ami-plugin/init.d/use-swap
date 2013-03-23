@@ -1,0 +1,26 @@
+#!/bin/bash
+### BEGIN INIT INFO
+# Provides:       use-swap
+# Required-Start: 
+# Required-Stop:  
+# Should-Start:   
+# Should-Stop:    
+# Default-Start:  2 3 4 5
+# Default-Stop:   
+# Description:    Uses all swap partitions even if they are not in /etc/fstab
+### END INIT INFO
+#
+# use-swap - Use all the swap partitions
+#
+# On m1.small and c1.medium instances there is a second partition on the main
+# disk which is preformatted as swap partition. Use it as a swap partition so
+# that the warrior doesn't try to use it as data partition.
+#
+
+for device in `blkid | grep 'TYPE="swap"' | cut -d':' -f1`
+do
+  if ! grep -qs "$device" /proc/mounts /proc/swaps
+  then
+    swapon "$device"
+  fi
+done

@@ -1,0 +1,37 @@
+#!/bin/bash
+
+chroot $imagedir useradd --create-home --shell /bin/bash warrior
+
+chroot $imagedir pip install pip --upgrade
+chroot $imagedir ln -sf /usr/local/bin/pip /usr/bin/pip
+chroot $imagedir pip install -e "git+https://github.com/ArchiveTeam/seesaw-kit.git#egg=seesaw"
+chroot $imagedir sudo -u warrior git clone -b ec2 "https://github.com/ArchiveTeam/warrior-code2.git" /home/warrior/warrior-code2
+
+cat >> $imagedir/etc/sudoers <<EOF
+warrior ALL=NOPASSWD:/sbin/shutdown
+warrior ALL=NOPASSWD:/usr/bin/apt-get
+warrior ALL=NOPASSWD:/usr/bin/pip
+warrior ALL=NOPASSWD: ALL
+EOF
+echo '*/10 *  * * *   root    ( /usr/sbin/ntpdate 0.debian.pool.ntp.org > /dev/null )' >> $imagedir/etc/crontab
+
+cat > $imagedir/etc/dnsmasq.conf <<EOF
+listen-address=127.0.0.1
+resolv-file=/etc/dhcpc/resolv.conf
+EOF
+cat > $imagedir/etc/resolv.conf <<EOF
+search ec2.internal
+nameserver 127.0.0.1
+EOF
+sed --in-place -r "s/^SET_DNS='yes'/#SET_DNS='yes'/" $imagedir/etc/default/dhcpcd
+
+# TODO: Put thos into a real initscript
+cat > $imagedir/etc/rc.local <<EOF
+#!/bin/sh
+sudo -u warrior /home/warrior/warrior-code2/boot.sh &
+sudo -u warrior /home/warrior/warrior-code2/warrior-runner.sh &
+exit 0
+EOF
+
+mkdir $imagedir/data
+chmod 777 $imagedir/data

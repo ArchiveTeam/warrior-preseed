@@ -1,0 +1,9 @@
+#!/bin/bash
+insert_task_after $TASK_PACKAGES \
+    $plugindir/warrior-setup-tasks/add-warrior-packages
+insert_task_before $TASK_INITSCRIPTS \
+    $plugindir/warrior-setup-tasks/disable-ec2-run-user-data
+insert_task_before $TASK_INITSCRIPTS \
+    $plugindir/warrior-setup-tasks/enable-use-swap
+insert_task_after $TASK_INITSCRIPTS \
+    $plugindir/warrior-setup-tasks/setup

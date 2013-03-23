@@ -1,0 +1,2 @@
+#!/bin/bash
+init_scripts+=("`dirname $BASH_SOURCE`/../init.d/use-swap")
