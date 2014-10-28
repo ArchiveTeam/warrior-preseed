@@ -1,7 +1,7 @@
 #!/bin/bash
 
-VMNAME="archiveteam-warrior-2"
-INSTALL_ISO="debian-6.0.6-i386-netinst.iso"
+VMNAME="archiveteam-warrior-3"
+INSTALL_ISO="debian-7.7.0-i386-netinst.iso"
 
 VBoxManage createvm --name $VMNAME --ostype Debian --register
 VBoxManage modifyvm $VMNAME \
@@ -12,9 +12,8 @@ VBoxManage modifyvm $VMNAME \
   --cpus 1 \
   --rtcuseutc on \
   --cpuhotplug off \
-  --pae off \
+  --pae on \
   --hwvirtex on \
-  --hwvirtexexcl on \
   --nestedpaging on \
   --largepages off \
   --accelerate3d off \
