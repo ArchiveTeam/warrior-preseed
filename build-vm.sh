@@ -12,7 +12,7 @@ VBoxManage modifyvm $VMNAME \
   --cpus 1 \
   --rtcuseutc on \
   --cpuhotplug off \
-  --pae on \
+  --pae off \
   --hwvirtex on \
   --nestedpaging on \
   --largepages off \
