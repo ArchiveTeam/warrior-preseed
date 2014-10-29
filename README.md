@@ -23,7 +23,7 @@ Step 2: Start the VM. It will start the Debian installer. To start the automated
 
     auto url=https://raw.githubusercontent.com/ArchiveTeam/warrior-preseed/master/warrior-preseed.cfg hostname=warriorvm
 
-(Replace that GitHub URL with a local HTTP URL. The Debian installer does not like HTTPS. If you have Python installed, use `python3 -m http.server` for an instant HTTP server and specify a LAN address such as `http://192.168.1.XXX:8000/warrior-preeseed.cfg`)
+(Replace that GitHub URL with a local HTTP URL. The Debian installer does not like HTTPS. If you have Python installed, use `python3 -m http.server` for an instant HTTP server and specify a LAN address such as `http://192.168.1.XXX:8000/warrior-preseed.cfg`)
 
 Step 3: Wait for the installer to finish and shut down the VM.
 
