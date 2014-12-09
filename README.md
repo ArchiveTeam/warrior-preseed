@@ -17,7 +17,7 @@ Install [VirtualBox](https://www.virtualbox.org/) and download the [Debian netin
    It will start the Debian installer.
    To start the automated installation, press `Esc` and type 
 
-    `auto url=https://raw.github.com/ArchiveTeam/warrior-preseed/master/warrior-preseed.cfg hostname=warriorvm domain=archiveteam`.
+    `auto url=https://raw.github.com/ArchiveTeam/warrior-preseed/master/warrior-preseed.cfg hostname=warriorvm domain=archiveteam`
 
    Please replace this GitHub URL with a local HTTP URL.
    The Debian installer does not like HTTPS.
