@@ -12,10 +12,7 @@ Building a warrior
 
 Install [VirtualBox](https://www.virtualbox.org/) and download the [Debian netinst ISO](http://cdimage.debian.org/debian-cd/6.0.6/i386/iso-cd/debian-6.0.6-i386-netinst.iso).
 
-1.  Create a VM with the required properties by running
-
-   `./build-vm.sh`
-
+1.  Create a VM with the required properties by running `./build-vm.sh`
 2. Start the VM.
    It will start the Debian installer.
    To start the automated installation, press `Esc` and type 
@@ -29,11 +26,7 @@ Install [VirtualBox](https://www.virtualbox.org/) and download the [Debian netin
    It will also zero-fill the unused space on the disk.
 5. Start the VM and select the *rescue mode* from the grub menu.
    Log in with root password *archiveteam*.
-   Then run 
-
-        `/home/warrior/warrior-code2/cleanup.sh`
-        
-   and wait for the script to finish.
+   Then run  `/home/warrior/warrior-code2/cleanup.sh` and wait for the script to finish.
    The zero-filling will end with a warning about disk space.
    Stop the VM with `shutdown -h now`
 6. You can now turn the VM into a virtual appliance package with `./pack-vm.sh`
