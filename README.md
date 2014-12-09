@@ -3,9 +3,9 @@ Warrior VM construction scripts (work in progress)
 
 The scripts in this repository can be used to build a new virtual machine of the ArchiveTeam Warrior 2.
 
-- [`build-vm.sh`](`build-vm.sh`) is a script that builds a new VirtualBox virtual machine.
-- [`warrior-preseed.cfg`](`warrior-preseed.cfg`) is a Debian 6.0 (Squeeze) preseed configuration file.
-- [`pack-vm.sh`](`pack-vm.sh`) turns the virtual machine into a virtual appliance (.ova).
+- [`build-vm.sh`](build-vm.sh) is a script that builds a new VirtualBox virtual machine.
+- [`warrior-preseed.cfg`](warrior-preseed.cfg) is a Debian 6.0 (Squeeze) preseed configuration file.
+- [`pack-vm.sh`](pack-vm.sh) turns the virtual machine into a virtual appliance (.ova).
 
 Building a warrior
 ------------------
