@@ -12,12 +12,12 @@ Building a warrior
 
 Install [VirtualBox](https://www.virtualbox.org/) and download the [Debian netinst ISO](http://cdimage.debian.org/debian-cd/6.0.6/i386/iso-cd/debian-6.0.6-i386-netinst.iso).
 
-1.  Create a VM with the required properties by running `./build-vm.sh`
+1. Create a VM with the required properties by running `./build-vm.sh`
 2. Start the VM.
    It will start the Debian installer.
-   To start the automated installation, press `Esc` and type 
+   To start the automated installation, press `Esc` and type
 
-    `auto url=https://raw.github.com/ArchiveTeam/warrior-preseed/master/warrior-preseed.cfg hostname=warriorvm domain=archiveteam`
+        auto url=https://raw.github.com/ArchiveTeam/warrior-preseed/master/warrior-preseed.cfg hostname=warriorvm domain=archiveteam
 
    Please replace this GitHub URL with a local HTTP URL.
    The Debian installer does not like HTTPS.
@@ -30,4 +30,3 @@ Install [VirtualBox](https://www.virtualbox.org/) and download the [Debian netin
    The zero-filling will end with a warning about disk space.
    Stop the VM with `shutdown -h now`
 6. You can now turn the VM into a virtual appliance package with `./pack-vm.sh`
-
