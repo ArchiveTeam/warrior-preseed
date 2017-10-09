@@ -1,7 +1,9 @@
-Warrior VM construction scripts (work in progress)
+Warrior VM construction scripts (2012)
 ==================================================
 
 The scripts in this repository can be used to build a new virtual machine of the ArchiveTeam Warrior 2.
+
+You may be interested in using https://github.com/ArchiveTeam/Ubuntu-Warrior instead.
 
 - [`build-vm.sh`](build-vm.sh) is a script that builds a new VirtualBox virtual machine.
 - [`warrior-preseed.cfg`](warrior-preseed.cfg) is a Debian 6.0 (Squeeze) preseed configuration file.
